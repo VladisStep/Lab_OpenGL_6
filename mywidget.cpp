@@ -14,32 +14,61 @@ void ShowWorld(){
 //    glDisableClientState(GL_VERTEX_ARRAY);
 
 
+    glBegin(GL_LINES);
+    glColor3f(1, 0, 0);
+        glVertex3d(-2,0,0);
+        glVertex3d(2,0,0);
+    glColor3f(0, 1, 0);
+        glVertex3d(0,-2,0);
+        glVertex3d(0,2,0);
+    glColor3f(0, 0, 1);
+        glVertex3d(0,0,-2);
+        glVertex3d(0,0,2);
+    glEnd();
+
+
+
+
     double slim = 1.0;
 
 
     glPointSize(10);
-    glColor3f(1, 0, 0);
+    glColor3f(1, 1, 1);
+
+    double r = 0.5;
 
     for (double i = 0.0; i < 2*M_PI; i += M_PI/10){
         glBegin(GL_LINE_LOOP);
-            glVertex3d(cos(i)/slim, sin(i)/slim, 0);
-            glVertex3d(cos(i+M_PI/10)/slim, sin(i+M_PI/10)/slim, 0);
-            glVertex3d(cos(i+M_PI/10)/slim, sin(i+M_PI/10)/slim, 0.5/slim);
-            glVertex3d(cos(i)/slim, sin(i)/slim, 0.5/slim);
+            glVertex3d(r*cos(i)/slim, r*sin(i)/slim, 0);
+            glVertex3d(r*cos(i+M_PI/10)/slim, r*sin(i+M_PI/10)/slim, 0);
+            glVertex3d(r*cos(i+M_PI/10)/slim, r*sin(i+M_PI/10)/slim, 0.5/slim);
+            glVertex3d(r*cos(i)/slim, r*sin(i)/slim, 0.5/slim);
         glEnd();
+
     }
 
-    double x = 0.0;
-    double y = 0.0;
+    for (int i = 0; i < 7; i++){
 
-//    for (double a = 0.503; a < 1.0; a += 0.01){
-//        glBegin(GL_LINE_LOOP);
-//            glVertex3d(a,asin(a-1.5)*2.0+3.0,0);
-//            glVertex3d(a+0.01,asin(a+0.01-1.5)*2.0+3.0,0);
-//            glVertex3d(-a-0.01,-asin(-a-0.01+1.5)*2.0+3.0,0);
-//            glVertex3d(-a,-asin(-a+1.5)*2.0+3.0,0);
-//        glEnd();
-//    }
+        glRotatef(360/7, 0,0,1);
+
+        for (double a = 0.0; a < 2.0; a += 0.1){
+            glBegin(GL_LINE_LOOP);
+    //            glVertex3d(cos(a/3)-0.5,a,cos(a*0.8+0.0)*0.5-0.3);
+    //            glVertex3d(-cos(a/3)+0.5,a,-cos(a*0.8+0.0)*0.5+0.3);
+    //            glVertex3d(-cos((a+0.1)/3)+0.5,(a+0.1),-cos((a+0.1)*0.8+0.0)*0.5+0.3);
+    //            glVertex3d(cos((a+0.1)/3)-0.5,(a+0.1),cos((a+0.1)*0.8+0.0)*0.5-0.3);
+
+                  glVertex3d(0,a+r,cos(a*0.8+1.3)*0.5-0.3);
+                  glVertex3d(0,a+r,-cos(a*0.8+1.3)*0.5+0.3);
+                  glVertex3d(0,(a+0.1)+r,-cos((a+0.1)*0.8+1.3)*0.5+0.3);
+                  glVertex3d(0,(a+0.1)+r,cos((a+0.1)*0.8+1.3)*0.5-0.3);
+
+            glEnd();
+        }
+
+    }
+
+
 
 
 
@@ -49,9 +78,9 @@ void ShowWorld(){
 
 void myWidget::MoveCamera(){
     glRotatef(-xAlpha, 1,0,0);
-//    glRotatef(-20, 0,1,0);
+    glRotatef(-yAlpha, 0,1,0);
     glRotated(-zAlpha, 0,0,1);
-    glTranslatef(0,0,-8);
+    glTranslatef(cam_x,cam_y,cam_z);
 
 
 }

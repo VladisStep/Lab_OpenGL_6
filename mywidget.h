@@ -11,7 +11,12 @@ class myWidget : public QOpenGLWidget
 
 public:
     float xAlpha = 0.0;
-    float zAlpha = 0.0;
+    float yAlpha = 0.0;
+    float zAlpha = -8.0;
+
+    float cam_x = 0.0;
+    float cam_y = 0.0;
+    float cam_z = -8.0;
 
 
      myWidget(QWidget *parent = nullptr);

@@ -18,10 +18,17 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void on_verticalSlider_sliderMoved(int position);
+    void on_horizontalSlider_x_sliderMoved(int position);
 
+    void on_horizontalSlider_y_sliderMoved(int position);
 
-    void on_horizontalSlider_sliderMoved(int position);
+    void on_horizontalSlider_z_sliderMoved(int position);
+
+    void on_horizontalSlider_a_x_sliderMoved(int position);
+
+    void on_horizontalSlider_a_y_sliderMoved(int position);
+
+    void on_horizontalSlider_a_z_sliderMoved(int position);
 
 private:
     Ui::MainWindow *ui;
