@@ -24,7 +24,7 @@ public:
 
     int fineness = 5; // melkost' razbieniya
 
-    int test = 10;
+    float test = 100;
 
 
      myWidget(QWidget *parent = nullptr);
