@@ -30,6 +30,16 @@ private slots:
 
     void on_horizontalSlider_a_z_sliderMoved(int position);
 
+    void on_horizontalSlider_melkost_sliderMoved(int position);
+
+    void on_horizontalSlider_fig_xAlpha_sliderMoved(int position);
+
+    void on_horizontalSlider_fig_yAlpha_sliderMoved(int position);
+
+    void on_horizontalSlider_fig_zAlpha_sliderMoved(int position);
+
+    void on_verticalSlider_sliderMoved(int position);
+
 private:
     Ui::MainWindow *ui;
 };

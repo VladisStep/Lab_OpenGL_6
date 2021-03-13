@@ -10,13 +10,21 @@ class myWidget : public QOpenGLWidget
 
 
 public:
-    float xAlpha = 0.0;
-    float yAlpha = 0.0;
-    float zAlpha = -8.0;
+    float xAlpha = 335.0;
+    float yAlpha = 33.0;
+    float zAlpha = 0.0;
 
-    float cam_x = 0.0;
-    float cam_y = 0.0;
-    float cam_z = -8.0;
+    float cam_x = -4.1;
+    float cam_y = -1.7;
+    float cam_z = -5.3;
+
+    int fig_xAlpha = 0.0;
+    int fig_yAlpha = 0.0;
+    int fig_zAlpha = 0.0;
+
+    int fineness = 5; // melkost' razbieniya
+
+    int test = 10;
 
 
      myWidget(QWidget *parent = nullptr);
@@ -27,6 +35,8 @@ public:
 
     void MoveCamera();
     void Turn();
+
+    void ShowWorld();
 };
 
 #endif // MYWIDGET_H
